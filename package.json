@@ -1,0 +1,25 @@
+{
+  "name": "CS290_-_Database_UI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jlevinpool/CS290_-_Database_UI.git"
+  },
+  "keywords": [],
+  "author": "James Pool <poolj@oregonstate.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jlevinpool/CS290_-_Database_UI/issues"
+  },
+  "homepage": "https://github.com/jlevinpool/CS290_-_Database_UI#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.10.2"
+  }
+}
