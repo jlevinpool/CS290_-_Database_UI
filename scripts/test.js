@@ -1,3 +1,4 @@
+console.log("Inside test.js");
 document.addEventListener('DOMContentLoaded', bindTestButton);
 
 function bindTestButton() {
