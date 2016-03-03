@@ -27,7 +27,7 @@ app.get('/load-table',function(req,res,next){
 	var createString = "INSERT INTO workouts VALUES (1,'Name_1',101,1001,'2001-01-01'),(2,'Name_2',202,2002,'2002-02-02')";
 	mysql.pool.query(createString,function(err){
 		context.results = "Table loaded";
-		res.render('home',)
+		res.render('home',context);
 	})
 });
 
