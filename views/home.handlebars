@@ -4,19 +4,18 @@
 	<fieldset>
 		<legend>Add a workout: </legend>
 		<label for="inputName">Exercise Name: </label>
-		<input type="text" id="inputName" required></input></br>
+		<input type="text" id="inputName"></input></br>
 		<label for="inputReps">Reps: </label>
-		<input type="number" id="inputReps" required></input></br>
+		<input type="number" id="inputReps" min="0" value="0"></input></br>
 		<label for="inputWeight">Weight: </label>
-		<input type="number" id="inputWeight" required></input>
-		<select name="inputWeightType" required>
+		<input type="number" id="inputWeight" min="0" value="0"></input>
+		<select name="inputWeightType" >
 			<option value=1>lbs</option>
 			<option value=0>kg</option>
-		</select>
+		</select></br>
 		<label for="inputDate">Date: </label>
-		<input type="date" id="inputDate" required></input></br>
-		<label for="testButton">Test Button: </label>
-		<input type="submit" id="testButton" value="Test Button"></input>
+		<input type="date" id="inputDate"></input></br>
+		<input type="submit" id="inputButton" value="Submit Form"></input>
 	</fieldset>
 </form>
 
