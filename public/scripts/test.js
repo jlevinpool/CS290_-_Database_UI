@@ -7,11 +7,12 @@ function bindTestButton() {
 		/* Check if all fields are filled */
 		var status = {};
 		if (document.getElementById('inputName').value == "") {
-			status += "Exercise Name"
+			alert("Enter an exercise name");
 		}
-		
-		document.getElementById('testSpan').textContent = "It Worked!";
-		console.log("Success!");
+		else {
+			document.getElementById('testSpan').textContent = "It Worked!";
+			console.log("Success!");
+		}
 		event.preventDefault();
 	});
 }
