@@ -28,6 +28,15 @@ function bindTestButton() {
 					if (response.SQL_ERROR) {
 						console.log(response.SQL_ERROR);
 					}
+					else {
+						/* Insert adapted from: http://stackoverflow.com/questions/18333427/how-to-insert-row-in-html-table-body-in-javascript */
+						var table = document.getElementById(tableID).getElementsByTagName('tbody')[0];
+						var newRow = table.insertRow(table.row.length);
+						var newCell_id = newRow.insertCell(0);
+						var newText_id = document.createTextNode('ID HERE');
+						newCell_id.appendChild(newText_id);
+						
+					}
 				}
 				else {
 					console.log(req.status + ":" + res.statusText);
@@ -58,24 +67,31 @@ function deleteRow(tableID,currentRow,rowID) {
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function() {
 		if (req.status >= 200 && req.status < 400) {
-			/* Remove row from table */
-			try {
-			var table = document.getElementById(tableID);
-			var rowCount = table.rows.length;
-			for (var i = 0; i < rowCount; i++) {
-				var row = table.rows[i];
-				if (row==currentRow.parentNode.parentNode) {
-					if (rowCount < 1) {
-						alert("Cannot delete row from empty table.");
-						break;
-					}
-					table.deleteRow(i);
-					rowCount--;
-					i--;
-				}
+			/* Check Response */
+			var response = JSON.parse(req.responseText);
+			if (response.SQL_ERROR) {
+				console.log(response.SQL_ERROR);
 			}
-			} catch (e) {
-				alert(e);
+			else {
+				/* Remove row from table */
+				try {
+				var table = document.getElementById(tableID);
+				var rowCount = table.rows.length;
+				for (var i = 0; i < rowCount; i++) {
+					var row = table.rows[i];
+					if (row==currentRow.parentNode.parentNode) {
+						if (rowCount < 1) {
+							alert("Cannot delete row from empty table.");
+							break;
+						}
+						table.deleteRow(i);
+						rowCount--;
+						i--;
+					}
+				}
+				} catch (e) {
+					alert(e);
+				}
 			}
 		}
 		else {

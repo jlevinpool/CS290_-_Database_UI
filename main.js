@@ -34,7 +34,7 @@ app.post('/',function(req,res,next){
 		mysql.pool.query('DELETE FROM workouts WHERE id=?',req.body['id'], function(err, results) {
 			if (err) {
 				res.type("text/plain");
-				res.send("The SQL DELETE query failed");
+				res.send(JSON.stringify({SQL_ERROR:'The SQL DELETE query failed'}));
 			}
 			res.type("text/plain");
 			res.send(results);
@@ -45,12 +45,12 @@ app.post('/',function(req,res,next){
 		mysql.pool.query('INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)',
 			[req.body['name'], req.body['reps'], req.body['weight'], req.body['date'], req.body['weightUnit']],
 			function(err, results) {
-			//if (err) {
+			if (err) {
 				res.type("text/plain");
 				res.send(JSON.stringify({SQL_ERROR:'The SQL INSERT query failed'}));
-			//}
-			//res.type("text/plain");
-			//res.send(results);
+			}
+			res.type("text/plain");
+			res.send(results);
 		});
 	}
 	else {
