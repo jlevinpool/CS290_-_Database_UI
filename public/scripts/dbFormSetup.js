@@ -1,4 +1,4 @@
-console.log("Inside dbFormSetup.js");
+var mysql = require('./dbFitness.js');
 document.addEventListener('DOMContentLoaded', bindTestButton);
 document.addEventListener('DOMContentLoaded', setCurrentDate);
 
@@ -31,7 +31,11 @@ function setCurrentDate() {
 
 /* Delete Table Row adapted from: http://jsfiddle.net/GRgMb/ */
 function deleteRow(tableID,currentRow) {
-    try {
+	/* Remove data from table */
+	console.log(table.rows[i]);
+	/* Remove row from table */
+	/*
+	try {
         var table = document.getElementById(tableID);
         var rowCount = table.rows.length;
         for (var i = 0; i < rowCount; i++) {
@@ -49,4 +53,5 @@ function deleteRow(tableID,currentRow) {
     } catch (e) {
         alert(e);
     }
+	*/
 }
