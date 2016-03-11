@@ -24,13 +24,28 @@
 	<table>
 			<thead>
 			<tr>
+				<th>ID</th>
 				<th>Exercise Name</th>
+				<th>Reps</th>
+				<th>Weight</th>
+				<th>Date</th>
 			</tr>
 		</thead>
 		<tbody>
 			{{#each rows}}
 			<tr>
+				<td>{{this.id}}</td>
 				<td>{{this.name}}</td>
+				<td>{{this.reps}}</td>
+				<td>
+					{{this.weight}}
+					{{#if this.lbs}}
+						lbs
+					{{#else}}
+						kg
+					{{/if}}
+				</td>
+				<td>{{this.date}}</td>
 			</tr>
 		{{/each}}
 		</tbody>
