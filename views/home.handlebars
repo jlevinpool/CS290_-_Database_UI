@@ -52,7 +52,7 @@
 					<input type="button" value="Update"></input>
 				</td>
 				<td>  <!-- Delete Button -->
-					<form name="delete-{{this.id}}" method="post" onsubmit="event.preventDefault(); deleteRow('dataTable',this)">
+					<form name="delete-{{this.id}}" method="post" onsubmit="deleteRow('dataTable',this)">
 						<input type="submit" value="Delete"></input>
 					</form>
 					<!-- Still need to update SQL -->

@@ -1,4 +1,3 @@
-var mysql = require('./dbFitness.js');
 document.addEventListener('DOMContentLoaded', bindTestButton);
 document.addEventListener('DOMContentLoaded', setCurrentDate);
 
@@ -32,6 +31,10 @@ function setCurrentDate() {
 /* Delete Table Row adapted from: http://jsfiddle.net/GRgMb/ */
 function deleteRow(tableID,currentRow) {
 	console.log("deleteRow");
+	var req = new XMLHttpRequest();
+	req.open('POST','/',true);
+	req.send(null);
+	event.preventDefault;
 	/* Remove row from table */
 	/*
 	try {
