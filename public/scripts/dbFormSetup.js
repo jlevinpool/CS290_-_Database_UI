@@ -41,7 +41,7 @@ function deleteRow(tableID,currentRow,rowID) {
 		else {
 			console.log(req.status + ":" + res.statusText);
 		}
-	}
+	});
 	req.send(payload);
 	/* Remove row from table */
 	/*
