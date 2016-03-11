@@ -8,6 +8,7 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
 app.use(express.static(__dirname + '/public'));
+app.use(express.bodyParser());
 
 app.get('/',function(req,res,next){
 	var context = {};

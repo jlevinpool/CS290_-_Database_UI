@@ -31,7 +31,7 @@ function setCurrentDate() {
 /* Delete Table Row adapted from: http://jsfiddle.net/GRgMb/ */
 function deleteRow(tableID,currentRow,rowID) {
 	var req = new XMLHttpRequest();
-	var payload = {Delete:rowID};
+	var payload = {Type:'Delete',ID:rowID};
 	req.open('POST','/',true);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function() {
