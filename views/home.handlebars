@@ -19,7 +19,25 @@
 	</fieldset>
 </form>
 
-
+<fieldset>
+	<legend>Fitness Tracker List</legend>
+	<table>
+		<tr>
+			<th>Exercise Name</th>
+			<th>Reps</th>
+			<th>Weight</th>
+			<th>Date</th>
+		</tr>
+		{{#each results}}
+		<tr>
+			<td>{{this.name}}</td>
+			<td>{{this.reps}}</td>
+			<td>{{this.weight}}</td>
+			<td>{{this.date}}</td>
+		</tr>
+		{{/each}}
+	</table>
+</fieldset>
 <h1>MySQL Results:</h1>
 <p>{{results}}</p>
 <span id="testSpan"></span>

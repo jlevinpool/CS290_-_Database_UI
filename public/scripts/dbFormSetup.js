@@ -1,4 +1,4 @@
-console.log("Inside test.js");
+console.log("Inside dbFormSetup.js");
 document.addEventListener('DOMContentLoaded', bindTestButton);
 document.addEventListener('DOMContentLoaded', setCurrentDate);
 
