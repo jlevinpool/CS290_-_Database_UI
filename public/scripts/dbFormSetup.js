@@ -16,6 +16,8 @@ function bindTestButton() {
 			console.log(document.getElementById('inputReps').value);
 			console.log(document.getElementById('inputWeight').value);
 			//console.log(document.getElementById('inputWeightType'));
+			var sWT = document.getElementById('inputWeightType');
+			console.log(sWT.selectedIndex + ": " + sWT.options[sWT.selectedIndex].value);
 			console.log(document.getElementById('inputDate').value);
 			/*
 			var payload = {Type:'Insert',
