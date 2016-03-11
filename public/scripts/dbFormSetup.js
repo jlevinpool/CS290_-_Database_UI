@@ -18,17 +18,20 @@ function bindTestButton() {
 				weightUnit:document.getElementById('inputWeightType').value,
 				date:document.getElementById('inputDate').value
 				}
+			console.log(payload);
+			/*
 			req.open('POST','/',true);
 			req.setRequestHeader('Content-Type', 'application/json');
 			req.addEventListener('load',function() {
 				if (req.status >= 200 && req.status < 400) {
-					/* Add row via AJAX */
+					// Add row via AJAX
 				}
 				else {
 					console.log(req.status + ":" + res.statusText);
 				}
 			});
 			req.send(JSON.stringify(payload));
+			*/
 		}
 		event.preventDefault();
 	});
