@@ -34,7 +34,6 @@ function deleteRow(tableID,currentRow) {
 	var req = new XMLHttpRequest();
 	req.open('POST','/',true);
 	req.send(null);
-	event.preventDefault;
 	/* Remove row from table */
 	/*
 	try {
