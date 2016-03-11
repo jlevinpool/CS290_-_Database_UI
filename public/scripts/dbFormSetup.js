@@ -31,8 +31,7 @@ function setCurrentDate() {
 
 /* Delete Table Row adapted from: http://jsfiddle.net/GRgMb/ */
 function deleteRow(tableID,currentRow) {
-	/* Remove data from table */
-	console.log(table.rows[i]);
+	console.log("deleteRow");
 	/* Remove row from table */
 	/*
 	try {

@@ -22,6 +22,10 @@ app.get('/',function(req,res,next){
 	});
 });
 
+app.post('/',function(req,res,next){
+	console.log("POST");
+}
+
 /* Test function to load table with data */
 app.get('/load-table',function(req,res,next){
 	var context = {};
