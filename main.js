@@ -24,7 +24,7 @@ app.get('/',function(req,res,next){
 
 app.post('/',function(req,res,next){
 	console.log("POST");
-	console.log(req);
+	console.log(req.body);
 });
 
 /* Test function to load table with data */
