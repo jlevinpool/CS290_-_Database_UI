@@ -22,20 +22,18 @@
 <fieldset>
 	<legend>Fitness Tracker List</legend>
 	<table>
-		<tr>
-			<th>Exercise Name</th>
-			<th>Reps</th>
-			<th>Weight</th>
-			<th>Date</th>
-		</tr>
-		{{#each results}}
-		<tr>
-			<td>{{this.name}}</td>
-			<td>{{this.reps}}</td>
-			<td>{{this.weight}}</td>
-			<td>{{this.date}}</td>
-		</tr>
+			<thead>
+			<tr>
+				<th>Exercise Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each results}}
+			<tr>
+				<td>{{this.name}}</td>
+			</tr>
 		{{/each}}
+		</tbody>
 	</table>
 </fieldset>
 <h1>MySQL Results:</h1>
