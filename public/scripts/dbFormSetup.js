@@ -24,9 +24,11 @@ function bindTestButton() {
 			req.setRequestHeader('Content-Type', 'application/json');
 			req.addEventListener('load',function() {
 				if (req.status >= 200 && req.status < 400) {
-					console.log(req.responseText);
 					var response = JSON.parse(req.responseText);
-					console.log(response);
+					if (response.SQL_ERROR) {
+						console.log(response.SQL_ERROR);
+						break;
+					}
 				}
 				else {
 					console.log(req.status + ":" + res.statusText);
