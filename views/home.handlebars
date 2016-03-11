@@ -21,7 +21,7 @@
 
 <fieldset>
 	<legend>Fitness Tracker List</legend>
-	<table>
+	<table id="dataTable">
 			<thead>
 			<tr>
 				<th>ID</th>
@@ -29,6 +29,8 @@
 				<th>Reps</th>
 				<th>Weight</th>
 				<th>Date</th>
+				<th>Update</th>
+				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -46,6 +48,13 @@
 					{{/if}}
 				</td>
 				<td>{{this.date}}</td>
+				<td>  <!-- Update Button -->
+					<input type="button" value="Update"></input>
+				</td>
+				<td>  <!-- Delete Button -->
+					<input type="button" value="Delete" onclick="deleteRow('dataTable',this)"></input>
+					<!-- Still need to update SQL -->
+				</td>
 			</tr>
 		{{/each}}
 		</tbody>
