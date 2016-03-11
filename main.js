@@ -47,7 +47,7 @@ app.post('/',function(req,res,next){
 			function(err, results) {
 			//if (err) {
 				res.type("text/plain");
-				res.send(JSON.stringify({SQL_ERROR:'The SQL INSERT query failed'});
+				res.send(JSON.stringify({SQL_ERROR:'The SQL INSERT query failed'}));
 			//}
 			//res.type("text/plain");
 			//res.send(results);
