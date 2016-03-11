@@ -42,8 +42,16 @@ app.post('/',function(req,res,next){
 	}
 	else if(req.body['type']=='Insert') {
 		console.log("Insert Type Recieved");
-		
-		res.send(null);
+		mysql.pool.query('INSERT INTO workouts (`name`,`reps`,`weight`,`date`,`lbs`) VALUES (?,?,?,?,?)',
+			[req.body['name'], req.body['reps'], req.body['weight'], req.body['date'], req.body['weightUnit']],
+			function(err, results) {
+			if (err) {
+				res.type("text/plain");
+				res.send("The SQL INSERT query failed");
+			}
+			res.type("text/plain");
+			res.send(results);
+		});
 	}
 	else {
 		console.log('Invalid POST Recieved - Unknown "Type"');

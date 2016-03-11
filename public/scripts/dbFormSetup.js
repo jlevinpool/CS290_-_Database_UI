@@ -24,7 +24,8 @@ function bindTestButton() {
 			req.setRequestHeader('Content-Type', 'application/json');
 			req.addEventListener('load',function() {
 				if (req.status >= 200 && req.status < 400) {
-					// Add row via AJAX
+					var response = JSON.parse(req.responseText);
+					console.log(response);
 				}
 				else {
 					console.log(req.status + ":" + res.statusText);
