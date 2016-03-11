@@ -42,7 +42,7 @@ function deleteRow(tableID,currentRow,rowID) {
 			console.log(req.status + ":" + res.statusText);
 		}
 	});
-	req.send(payload);
+	req.send(JSON.stringify(payload));
 	/* Remove row from table */
 	/*
 	try {
