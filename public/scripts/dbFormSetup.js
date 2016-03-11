@@ -5,6 +5,7 @@ function bindTestButton() {
 	document.getElementById('inputButton').addEventListener('click', function(event){
 		/* Check if all fields are filled */
 		var status = {};
+		event.preventDefault();
 		if (document.getElementById('inputName').value == "") {
 			alert("Enter an exercise name");
 		}
@@ -14,7 +15,7 @@ function bindTestButton() {
 			console.log(document.getElementById('inputName').value);
 			console.log(document.getElementById('inputReps').value);
 			console.log(document.getElementById('inputWeight').value);
-			console.log(document.getElementById('inputWeightType'));
+			//console.log(document.getElementById('inputWeightType'));
 			console.log(document.getElementById('inputDate').value);
 			/*
 			var payload = {Type:'Insert',
@@ -38,7 +39,6 @@ function bindTestButton() {
 			req.send(JSON.stringify(payload));
 			*/
 		}
-		event.preventDefault();
 	});
 }
 
