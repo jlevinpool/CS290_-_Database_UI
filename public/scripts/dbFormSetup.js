@@ -12,10 +12,9 @@ function bindTestButton() {
 			var req = new XMLHttpRequest();
 			/* Pull form data */
 			console.log(document.getElementById('inputName').value);
-			console.log(document.getElementById('inputName').value);
 			console.log(document.getElementById('inputReps').value);
 			console.log(document.getElementById('inputWeight').value);
-			console.log(document.getElementById('inputWeightType').value);
+			console.log(document.getElementById('inputWeightType'));
 			console.log(document.getElementById('inputDate').value);
 			/*
 			var payload = {Type:'Insert',
