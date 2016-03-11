@@ -31,6 +31,7 @@ function bindTestButton() {
 					else {
 						/* Insert adapted from: http://stackoverflow.com/questions/18333427/how-to-insert-row-in-html-table-body-in-javascript */
 						var table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+						console.log(table);
 						var newRow = table.insertRow(table.row.length);
 						table.appendChild(newRow);
 						
