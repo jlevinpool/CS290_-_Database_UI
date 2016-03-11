@@ -29,11 +29,20 @@ function setCurrentDate() {
 }
 
 /* Delete Table Row adapted from: http://jsfiddle.net/GRgMb/ */
-function deleteRow(tableID,currentRow) {
-	console.log("deleteRow");
+function deleteRow(tableID,currentRow,rowID) {
 	var req = new XMLHttpRequest();
+	var payload = {'Delete':rowID};
 	req.open('POST','/',true);
-	req.send(null);
+	req.setRequestHeader('Content-Type','application/json');
+	req.addEventListener('load',function() {
+		if (req.status >= 200 && req.status < 400) {
+				console.log("deleteRow");
+		}
+		else {
+			console.log(req.status + ":" + res.statusText);
+		}
+	}
+	req.send(payload);
 	/* Remove row from table */
 	/*
 	try {
