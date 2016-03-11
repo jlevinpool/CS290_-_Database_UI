@@ -38,7 +38,7 @@ app.post('/',function(req,res,next){
 			}
 			res.type("text/plain");
 			res.send(results);
-		}
+		});
 	}
 	else {
 		console.log('Invalid POST Recieved - Unknown "Type"');
