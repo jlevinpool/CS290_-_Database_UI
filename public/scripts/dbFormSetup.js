@@ -13,7 +13,7 @@ function bindTestButton() {
 			var req = new XMLHttpRequest();
 			/* Pull form data */
 			var selectWeightType = document.getElementById('inputWeightType');
-			var payload = {Type:'Insert',
+			var payload = {type:'Insert',
 				name:document.getElementById('inputName').value,
 				reps:document.getElementById('inputReps').value,
 				weight:document.getElementById('inputWeight').value,
