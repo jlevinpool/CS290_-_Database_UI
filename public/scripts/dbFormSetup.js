@@ -27,7 +27,7 @@ function bindTestButton() {
 					var response = JSON.parse(req.responseText);
 					if (response.SQL_ERROR) {
 						console.log(response.SQL_ERROR);
-						break;
+						return;
 					}
 				}
 				else {
