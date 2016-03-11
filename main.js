@@ -29,9 +29,9 @@ app.get('/',function(req,res,next){
 app.post('/',function(req,res,next){
 	console.log("POST");
 	console.log(req.body);
-	if(req.body['Type']='Delete') {
+	if(req.body['type']='Delete') {
 		console.log("Delete Type Recieved");
-		mysql.pool.query('DELETE FROM workouts WHERE id=?',req.body['ID'], function(err, results) {
+		mysql.pool.query('DELETE FROM workouts WHERE id=?',req.body['id'], function(err, results) {
 			if (err) {
 				res.type("text/plain");
 				res.send("The SQL DELETE query failed");

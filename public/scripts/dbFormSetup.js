@@ -9,9 +9,27 @@ function bindTestButton() {
 			alert("Enter an exercise name");
 		}
 		else {
-			document.getElementById('testSpan').textContent = "It Worked!";
-			console.log("Success!");
+			var req = new XMLHttpRequest();
+			/* Pull form data */
+			var payload = {Type:'Insert',
+				name:document.getElementById('inputName').value,
+				reps:document.getElementById('inputReps').value,
+				weight:document.getElementById('inputWeight').value,
+				weightUnit:document.getElementById('inputWeightType').value,
+				date:document.getElementById('inputDate').value
+				}
+			req.open('POST','/',true);
+			req.setRequestHeader('Content-Type', 'application/json');
+			req.addEventListener('load',function() {
+				if (req.status >= 200 && req.status < 400) {
+					/* Add row via AJAX */
+				}
+				else {
+					console.log(req.status + ":" + res.statusText);
+				}
+			});
 		}
+		req.send(JSON.stringify(payload));
 		event.preventDefault();
 	});
 }
@@ -31,7 +49,7 @@ function setCurrentDate() {
 /* Delete Table Row adapted from: http://jsfiddle.net/GRgMb/ */
 function deleteRow(tableID,currentRow,rowID) {
 	var req = new XMLHttpRequest();
-	var payload = {Type:'Delete',ID:rowID};
+	var payload = {type:'Delete',id:rowID};
 	req.open('POST','/',true);
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function() {
@@ -61,5 +79,4 @@ function deleteRow(tableID,currentRow,rowID) {
 		}
 	});
 	req.send(JSON.stringify(payload));
-
 }
