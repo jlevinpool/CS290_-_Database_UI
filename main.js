@@ -17,6 +17,7 @@ app.get('/',function(req,res,next){
 			return;
 		}
 		context.results = JSON.stringify(rows);
+		console.log(context);
 		res.render('home', context);
 	});
 });
