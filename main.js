@@ -29,7 +29,7 @@ app.get('/',function(req,res,next){
 app.post('/',function(req,res,next){
 	console.log("POST");
 	console.log(req.body);
-	if(req.body['type']='Delete') {
+	if(req.body['type']=='Delete') {
 		console.log("Delete Type Recieved");
 		mysql.pool.query('DELETE FROM workouts WHERE id=?',req.body['id'], function(err, results) {
 			if (err) {
@@ -40,7 +40,7 @@ app.post('/',function(req,res,next){
 			res.send(results);
 		});
 	}
-	else if(req.body['type']='Insert') {
+	else if(req.body['type']=='Insert') {
 		console.log("Insert Type Recieved");
 		
 		res.send(null);
