@@ -40,6 +40,11 @@ app.post('/',function(req,res,next){
 			res.send(results);
 		});
 	}
+	else if(req.body['type']='Insert') {
+		console.log("Insert Type Recieved");
+		
+		res.send(null);
+	}
 	else {
 		console.log('Invalid POST Recieved - Unknown "Type"');
 		res.send(null);

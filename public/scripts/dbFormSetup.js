@@ -12,14 +12,6 @@ function bindTestButton() {
 		else {
 			var req = new XMLHttpRequest();
 			/* Pull form data */
-			/*
-			console.log(document.getElementById('inputName').value);
-			console.log(document.getElementById('inputReps').value);
-			console.log(document.getElementById('inputWeight').value);
-			var selectWeightType = document.getElementById('inputWeightType');
-			console.log(selectWeightType.options[selectWeightType.selectedIndex].value);
-			console.log(document.getElementById('inputDate').value);
-			*/
 			var selectWeightType = document.getElementById('inputWeightType');
 			var payload = {Type:'Insert',
 				name:document.getElementById('inputName').value,
@@ -28,8 +20,6 @@ function bindTestButton() {
 				weightUnit:selectWeightType.options[selectWeightType.selectedIndex].value,
 				date:document.getElementById('inputDate').value
 				}
-			console.log(payload);
-			/*
 			req.open('POST','/',true);
 			req.setRequestHeader('Content-Type', 'application/json');
 			req.addEventListener('load',function() {
@@ -41,7 +31,6 @@ function bindTestButton() {
 				}
 			});
 			req.send(JSON.stringify(payload));
-			*/
 		}
 	});
 }
