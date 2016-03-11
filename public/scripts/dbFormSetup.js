@@ -28,8 +28,8 @@ function bindTestButton() {
 					console.log(req.status + ":" + res.statusText);
 				}
 			});
+			req.send(JSON.stringify(payload));
 		}
-		req.send(JSON.stringify(payload));
 		event.preventDefault();
 	});
 }
