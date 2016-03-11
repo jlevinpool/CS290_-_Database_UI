@@ -11,6 +11,13 @@ function bindTestButton() {
 		else {
 			var req = new XMLHttpRequest();
 			/* Pull form data */
+			console.log(document.getElementById('inputName').value);
+			console.log(document.getElementById('inputName').value);
+			console.log(document.getElementById('inputReps').value);
+			console.log(document.getElementById('inputWeight').value);
+			console.log(document.getElementById('inputWeightType').value);
+			console.log(document.getElementById('inputDate').value);
+			/*
 			var payload = {Type:'Insert',
 				name:document.getElementById('inputName').value,
 				reps:document.getElementById('inputReps').value,
@@ -19,7 +26,6 @@ function bindTestButton() {
 				date:document.getElementById('inputDate').value
 				}
 			console.log(payload);
-			/*
 			req.open('POST','/',true);
 			req.setRequestHeader('Content-Type', 'application/json');
 			req.addEventListener('load',function() {
