@@ -12,22 +12,24 @@ function bindTestButton() {
 		else {
 			var req = new XMLHttpRequest();
 			/* Pull form data */
+			/*
 			console.log(document.getElementById('inputName').value);
 			console.log(document.getElementById('inputReps').value);
 			console.log(document.getElementById('inputWeight').value);
-			//console.log(document.getElementById('inputWeightType'));
-			var sWT = document.getElementById('inputWeightType');
-			console.log(sWT.selectedIndex + ": " + sWT.options[sWT.selectedIndex].value);
+			var selectWeightType = document.getElementById('inputWeightType');
+			console.log(selectWeightType.options[selectWeightType.selectedIndex].value);
 			console.log(document.getElementById('inputDate').value);
-			/*
+			*/
+			var selectWeightType = document.getElementById('inputWeightType');
 			var payload = {Type:'Insert',
 				name:document.getElementById('inputName').value,
 				reps:document.getElementById('inputReps').value,
 				weight:document.getElementById('inputWeight').value,
-				weightUnit:document.getElementById('inputWeightType').value,
+				weightUnit:selectWeightType.options[selectWeightType.selectedIndex].value,
 				date:document.getElementById('inputDate').value
 				}
 			console.log(payload);
+			/*
 			req.open('POST','/',true);
 			req.setRequestHeader('Content-Type', 'application/json');
 			req.addEventListener('load',function() {
