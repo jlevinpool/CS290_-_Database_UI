@@ -32,9 +32,7 @@ function bindTestButton() {
 						/* Insert adapted from: http://stackoverflow.com/questions/18333427/how-to-insert-row-in-html-table-body-in-javascript */
 						var table = document.getElementById(tableID).getElementsByTagName('tbody')[0];
 						var newRow = table.insertRow(table.row.length);
-						var newCell_id = newRow.insertCell(0);
-						var newText_id = document.createTextNode('ID HERE');
-						newCell_id.appendChild(newText_id);
+						table.appendChild(newRow);
 						
 					}
 				}
