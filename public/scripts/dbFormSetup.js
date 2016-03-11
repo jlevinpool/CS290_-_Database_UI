@@ -36,32 +36,30 @@ function deleteRow(tableID,currentRow,rowID) {
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function() {
 		if (req.status >= 200 && req.status < 400) {
-				console.log(req);
+			/* Remove row from table */
+			try {
+			var table = document.getElementById(tableID);
+			var rowCount = table.rows.length;
+			for (var i = 0; i < rowCount; i++) {
+				var row = table.rows[i];
+				if (row==currentRow.parentNode.parentNode) {
+					if (rowCount < 1) {
+						alert("Cannot delete row from empty table.");
+						break;
+					}
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+			}
+			} catch (e) {
+				alert(e);
+			}
 		}
 		else {
 			console.log(req.status + ":" + res.statusText);
 		}
 	});
 	req.send(JSON.stringify(payload));
-	/* Remove row from table */
-	/*
-	try {
-        var table = document.getElementById(tableID);
-        var rowCount = table.rows.length;
-        for (var i = 0; i < rowCount; i++) {
-            var row = table.rows[i];
-            if (row==currentRow.parentNode.parentNode) {
-                if (rowCount < 1) {
-                    alert("Cannot delete row from empty table.");
-                    break;
-                }
-                table.deleteRow(i);
-                rowCount--;
-                i--;
-            }
-        }
-    } catch (e) {
-        alert(e);
-    }
-	*/
+
 }
