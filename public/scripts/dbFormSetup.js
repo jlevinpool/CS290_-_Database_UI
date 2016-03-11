@@ -36,7 +36,7 @@ function deleteRow(tableID,currentRow,rowID) {
 	req.setRequestHeader('Content-Type', 'application/json');
 	req.addEventListener('load',function() {
 		if (req.status >= 200 && req.status < 400) {
-				console.log("deleteRow");
+				console.log(res.results);
 		}
 		else {
 			console.log(req.status + ":" + res.statusText);

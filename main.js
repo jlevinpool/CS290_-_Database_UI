@@ -31,7 +31,14 @@ app.post('/',function(req,res,next){
 	console.log(req.body);
 	if(req.body['Type']='Delete') {
 		console.log("Delete Type Recieved");
-		res.send("Return from POST");
+		mysql.pool.query('DELETE FROM workouts WHERE id=?',req.body['ID'], function(err, results) {
+			if (err) {
+				res.type("text/plain");
+				res.send("The SQL DELETE query failed");
+			}
+			res.type("text/plain");
+			res.send(results);
+		}
 	}
 	else {
 		console.log('Invalid POST Recieved - Unknown "Type"');
