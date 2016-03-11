@@ -3,12 +3,15 @@ var mysql = require('./dbFitness.js');
 
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
+var bodyParser = require('body-parser');
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
 app.use(express.static(__dirname + '/public'));
-app.use(express.bodyParser());
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get('/',function(req,res,next){
 	var context = {};
