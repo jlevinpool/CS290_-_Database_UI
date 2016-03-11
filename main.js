@@ -29,7 +29,14 @@ app.get('/',function(req,res,next){
 app.post('/',function(req,res,next){
 	console.log("POST");
 	console.log(req.body);
-	res.send("Return from POST");
+	if(req.body['Type']='Delete') {
+		console.log("Delete Type Recieved");
+		res.send("Return from POST");
+	}
+	else {
+		console.log('Invalid POST Recieved - Unknown "Type"');
+		res.send(null);
+	}
 });
 
 /* Test function to load table with data */
