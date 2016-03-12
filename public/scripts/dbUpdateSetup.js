@@ -29,7 +29,7 @@ function bindTestButton() {
 					}
 				}
 				else {
-					console.log(req.status + ":" + res.statusText);
+					console.log(req.status + ":" + req.statusText);
 				}
 			});
 			req.send(JSON.stringify(payload));

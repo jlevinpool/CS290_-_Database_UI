@@ -73,7 +73,7 @@ app.post('/',function(req,res,next){
 	}
 	else if(req.body['type']=='Update') {
 		var context = {};
-		context.log(req.body);
+		console.log(req.body);
 		/*
 		mysql.pool.query('SELECT * FROM workouts WHERE id=?',req.body['id'],function (err, result) {
 			if (err) {
