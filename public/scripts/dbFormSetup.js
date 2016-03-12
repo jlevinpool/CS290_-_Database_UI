@@ -58,7 +58,7 @@ function bindTestButton() {
 						updateBtn = document.createElement("BUTTON");
 						newBtn.innerHTML = 'Delete';
 						newBtn.onclick = function () {
-							deleteRow('dataTable',newRow,response.insertId)
+							deleteRow('dataTable',newRow,response.insertId);
 						};
 						newCell.appendChild(newBtn);
 						newRow.appendChild(newCell);
