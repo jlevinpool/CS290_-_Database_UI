@@ -71,6 +71,25 @@ app.post('/',function(req,res,next){
 			res.send(results);
 		});
 	}
+	else if(req.body['type']=='Update') {
+		var context = {};
+		context.log(req.body);
+		/*
+		mysql.pool.query('SELECT * FROM workouts WHERE id=?',req.body['id'],function (err, result) {
+			if (err) {
+				next(err);
+				return;
+			}
+			if (result.length == 1) {
+				var curVals = result[0];
+				mysql.pool.query('UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=?'),
+					[req.query.inputName || curVals.name, req.query.inputReps || curVals.reps, 
+					req.query.inputWeight || curVals.weight, req.query.inputDate || curVals.date,
+					//Select Option?]
+			}
+		}
+		*/
+	}
 	else {
 		console.log('Invalid POST Recieved - Unknown "Type"');
 		res.send(null);
