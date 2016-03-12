@@ -78,9 +78,9 @@ app.post('/',function(req,res,next){
 				next(err);
 				return;
 			}
-			console.log(result);
-			/*if (result.length == 1) {
+			if (result.length == 1) {
 				var curVals = result[0];
+				console.log(curVals);
 				mysql.pool.query('UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=?',
 					[req.body['inputName'] || curVals.name, req.body['inputReps'] || curVals.reps, 
 					req.body['inputWeight'] || curVals.weight, req.body['inputDate'] || curVals.date,
@@ -89,18 +89,19 @@ app.post('/',function(req,res,next){
 							next (err);
 							return;
 						}
-						var context = {};
+						console.log(result);
+						/*var context = {};
 						mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields) {
-					if(err) {
-						next(err);
-						return;
-					}
+						if(err) {
+							next(err);
+							return;
+						}
 					context.rows = rows;
 					context.results = JSON.stringify(rows);
-					res.render('home', context);
+					res.render('home', context); */
 					});
 				});
-			}*/
+			}
 		});
 	}
 	else {
