@@ -37,6 +37,7 @@ app.get('/update',function(req,res,next){
 		context.dateYear = context.date.getFullYear();
 		context.dateMonth = context.date.getMonth() + 1;
 		context.dateDate = context.date.getDate();
+		context.dateFormat = context.dateYear + "-" + context.dateMonth + "-" + context.dateDate;
 		console.log(context);
 		res.render('update',context);
 	});
