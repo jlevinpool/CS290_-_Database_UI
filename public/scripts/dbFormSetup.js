@@ -47,7 +47,19 @@ function bindTestButton() {
 							newCell.appendChild(newText);
 							newRow.appendChild(newCell);
 						}
-						
+						/* Add Update button */
+						var newCell = newRow.insertCell(newContent.length);
+						var newBtn = document.createElement("BUTTON");
+						newBtn.innerHTML = 'Update';
+						newCell.appendChild(newBtn);
+						newRow.appendChild(newCell);
+						/* Add Delete button */
+						newCell = newRow.insertCell(newContent.length);
+						updateBtn = document.createElement("BUTTON");
+						newBtn.innerHTML = 'Delete';
+						newBtn.onclick = deleteRow('dataTable',newRow,response.insertId);
+						newCell.appendChild(newBtn);
+						newRow.appendChild(newCell);
 						/* Add row to table */
 						table.appendChild(newRow);
 						
@@ -62,19 +74,8 @@ function bindTestButton() {
 	});
 }
 
-
-/* Code for setting date from: http://stackoverflow.com/questions/6982692/html5-input-type-date-default-value-to-today */
-Date.prototype.toDateInputValue = (function() {
-    var local = new Date(this);
-    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-    return local.toJSON().slice(0,10);
-});
-
 function setCurrentDate() {
-	//document.getElementById('inputDate').value = new Date().toDateInputValue();
-	var today = new Date();
-	today -= today.getTimezoneOffset();
-	document.getElementById('inputDate').valueAsDate = today;
+	document.getElementById('inputDate').valueAsDate = new Date();
 }
 
 /* Delete Table Row adapted from: http://jsfiddle.net/GRgMb/ */
