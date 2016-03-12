@@ -20,8 +20,7 @@ app.get('/',function(req,res,next){
 			next(err);
 			return;
 		}
-		context.rows = rows;
-		context.results = JSON.stringify(rows);
+		context = rows[0];
 		res.render('home', context);
 	});
 });
