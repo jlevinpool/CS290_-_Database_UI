@@ -1,15 +1,15 @@
 <form>
 	<fieldset>
 		<legend>Update a workout: </legend>
-		<input type="hidden" id="inputID" value="{{id}}"></input>
+		<input type="hidden" id="inputID" value="{{rows.id}}"></input>
 		<label for="inputName">Exercise Name: </label>
-		<input type="text" id="inputName" value="{{name}}"></input></br>
+		<input type="text" id="inputName" value="{{rows.name}}"></input></br>
 		<label for="inputReps">Reps: </label>
-		<input type="number" id="inputReps" min="0" value="{{reps}}"></input></br>
+		<input type="number" id="inputReps" min="0" value="{{rows.reps}}"></input></br>
 		<label for="inputWeight">Weight: </label>
-		<input type="number" id="inputWeight" min="0" value="{{weight}}"></input>
+		<input type="number" id="inputWeight" min="0" value="{{rows.weight}}"></input>
 		<select id="inputWeightType" >
-			{#if lbs}}
+			{#if rows.lbs}}
 			<option value=0>kg</option>
 			<option value=1 selected>lbs</option>
 			{{else}}
@@ -18,7 +18,7 @@
 			{{/if}}
 		</select></br>
 		<label for="inputDate">Date: </label>
-		<input type="date" id="inputDate" value="{{date}}"></input></br>
+		<input type="date" id="inputDate" value="{{rows.date}}"></input></br>
 		<input type="submit" id="inputButton" value="Update Form"></input>
 	</fieldset>
 </form>

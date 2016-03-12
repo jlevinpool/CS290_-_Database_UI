@@ -33,7 +33,7 @@ app.get('/update',function(req,res,next){
 			next(err);
 			return;
 		}
-		context.rows = rows[0];
+		context.rows = rows;
 		context.results = JSON.stringify(rows);
 		console.log(context.results);
 		res.render('update',context);
