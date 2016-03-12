@@ -20,7 +20,8 @@ app.get('/',function(req,res,next){
 			next(err);
 			return;
 		}
-		context = rows[0];
+		context.rows = rows;
+		context.results = JSON.stringify(rows);
 		res.render('home', context);
 	});
 });
@@ -32,8 +33,7 @@ app.get('/update',function(req,res,next){
 			next(err);
 			return;
 		}
-		context.rows = rows;
-		context.results = JSON.stringify(rows);
+		context = rows[0];
 		console.log(context);
 		res.render('update',context);
 	});
