@@ -71,7 +71,8 @@ Date.prototype.toDateInputValue = (function() {
 });
 
 function setCurrentDate() {
-	document.getElementById('inputDate').value = new Date().toDateInputValue();
+	//document.getElementById('inputDate').value = new Date().toDateInputValue();
+	document.getElementById('inputDate').valueAsDate = new Date();
 }
 
 /* Delete Table Row adapted from: http://jsfiddle.net/GRgMb/ */
