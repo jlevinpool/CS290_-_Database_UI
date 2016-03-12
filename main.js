@@ -38,7 +38,7 @@ app.get('/update',function(req,res,next){
 		console.log(context.results);
 		res.render('update',context);
 	});
-}
+});
 
 app.post('/',function(req,res,next){
 	if(req.body['type']=='Delete') {
