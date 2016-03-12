@@ -29,9 +29,13 @@ function bindTestButton() {
 						console.log(response.SQL_ERROR);
 					}
 					else {
+						console.log(response);
 						/* Insert adapted from: http://stackoverflow.com/questions/18333427/how-to-insert-row-in-html-table-body-in-javascript */
 						var table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
 						var newRow = table.insertRow(table.rows.length);
+						/* Insert ID */
+						var newCell = newRow.insertCell(0);
+						//var newText = document.createTextNode(response.)
 						table.appendChild(newRow);
 						
 					}
