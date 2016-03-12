@@ -28,9 +28,17 @@ app.get('/',function(req,res,next){
 
 app.get('/update',function(req,res,next){
 	var context = {};
-	console.log(req.query);
-	res.render('update',context);
-});
+	mysql.pool.query('SELECT * FROM workouts WHERE id=?', req.query['id'],function(err, rows, fields) {
+		if(err) {
+			next(err);
+			return;
+		}
+		context.rows = rows;
+		context.results = JSON.stringify(rows);
+		console.log(context.results);
+		res.render('update',context);
+	});
+}
 
 app.post('/',function(req,res,next){
 	if(req.body['type']=='Delete') {
