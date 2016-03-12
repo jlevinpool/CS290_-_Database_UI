@@ -62,7 +62,7 @@ function bindTestButton() {
 						//delBtn.onclick = function() {
 						//	alert("hi javascript");
 						//};
-						delCell.innerHTML = '<input type="button"></input>';
+						delCell.innerHTML = '<input type="button" value="Delete" onclick="deleteRow(\'dataTable\',this,' + response.insertId + '"></input>';
 						//delCell.appendChild(delBtn);
 						newRow.appendChild(delCell);
 						/* Add row to table */
