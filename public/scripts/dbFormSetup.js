@@ -35,7 +35,7 @@ function bindTestButton() {
 						var newRow = table.insertRow(table.rows.length);
 						/* Insert ID */
 						var newCell = newRow.insertCell(0);
-						//var newText = document.createTextNode(response.)
+						var newText = document.createTextNode(response.insertId);
 						table.appendChild(newRow);
 						
 					}
