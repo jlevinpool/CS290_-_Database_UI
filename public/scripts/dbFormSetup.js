@@ -39,7 +39,7 @@ function bindTestButton() {
 						newContent[1] = document.getElementById('inputName').value;
 						newContent[2] = document.getElementById('inputReps').value;
 						newContent[3] = document.getElementById('inputWeight').value + " " + selectWeightType.options[selectWeightType.selectedIndex].text;
-						newContent[4] = newDate(document.getElementById('inputDate').value);
+						newContent[4] = new Date(document.getElementById('inputDate').value);
 						/* Add cells to table */
 						for (i = 0; i < newContent.length; i++) {
 							var newCell = newRow.insertCell(i);
