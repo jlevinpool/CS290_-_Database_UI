@@ -26,9 +26,13 @@ app.get('/',function(req,res,next){
 	});
 });
 
+app.get('/update',function(req,res,next){
+	var context = {};
+	console.log(req.query);
+	res.render('update',context);
+}
+
 app.post('/',function(req,res,next){
-	console.log("POST");
-	console.log(req.body);
 	if(req.body['type']=='Delete') {
 		console.log("Delete Type Recieved");
 		mysql.pool.query('DELETE FROM workouts WHERE id=?',req.body['id'], function(err, results) {

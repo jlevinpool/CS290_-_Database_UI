@@ -50,7 +50,7 @@ function bindTestButton() {
 						/* Add Update button */
 						var upCell = newRow.insertCell(newContent.length);
 						var upBtn = document.createElement('input');
-						upBtn.type = 'button';
+						upBtn.type = 'button';  //NEED TO FIX
 						upBtn.value = 'Update';
 						upCell.appendChild(upBtn);
 						newRow.appendChild(upCell);
