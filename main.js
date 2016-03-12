@@ -78,7 +78,8 @@ app.post('/',function(req,res,next){
 				next(err);
 				return;
 			}
-			if (result.length == 1) {
+			console.log(result);
+			/*if (result.length == 1) {
 				var curVals = result[0];
 				mysql.pool.query('UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=?',
 					[req.body['inputName'] || curVals.name, req.body['inputReps'] || curVals.reps, 
@@ -99,7 +100,7 @@ app.post('/',function(req,res,next){
 					res.render('home', context);
 					});
 				});
-			}
+			}*/
 		});
 	}
 	else {
