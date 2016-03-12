@@ -56,13 +56,14 @@ function bindTestButton() {
 						newRow.appendChild(newCell);
 						/* Add Delete button */
 						var delCell = newRow.insertCell(newContent.length + 1);
-						var delBtn = document.createElement('input');
-						delBtn.type = 'button';
-						delBtn.value = 'Delete';
-						delBtn.onclick = function() {
-							alert("hi javascript");
-						};
-						delCell.appendChild(delBtn);
+						//var delBtn = document.createElement('input');
+						//delBtn.type = 'button';
+						//delBtn.value = 'Delete';
+						//delBtn.onclick = function() {
+						//	alert("hi javascript");
+						//};
+						delCell.innerHTML = '<input type="button"></input>';
+						//delCell.appendChild(delBtn);
 						newRow.appendChild(delCell);
 						/* Add row to table */
 						table.appendChild(newRow);
