@@ -53,7 +53,7 @@ function bindTestButton() {
 						upBtn.type = 'button';
 						upBtn.value = 'Update';
 						upCell.appendChild(upBtn);
-						newRow.appendChild(newCell);
+						newRow.appendChild(upCell);
 						/* Add Delete button */
 						var delCell = newRow.insertCell(newContent.length + 1);
 						//var delBtn = document.createElement('input');
