@@ -49,7 +49,9 @@
 				</td>
 				<td>{{this.date}}</td>
 				<td>  <!-- Update Button -->
-					<input type="button" value="Update"></input>
+					<form method="GET" action="/update">
+						<input type="button" value="Update"></input>
+					</form>
 				</td>
 				<td>  <!-- Delete Button -->
 					<input type="button" value="Delete" onclick="deleteRow('dataTable',this,{{this.id}})"></input>
