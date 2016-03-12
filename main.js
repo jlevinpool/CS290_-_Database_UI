@@ -30,7 +30,7 @@ app.get('/update',function(req,res,next){
 	var context = {};
 	console.log(req.query);
 	res.render('update',context);
-}
+});
 
 app.post('/',function(req,res,next){
 	if(req.body['type']=='Delete') {
