@@ -72,7 +72,9 @@ Date.prototype.toDateInputValue = (function() {
 
 function setCurrentDate() {
 	//document.getElementById('inputDate').value = new Date().toDateInputValue();
-	document.getElementById('inputDate').valueAsDate = new Date();
+	var today = new Date();
+	today -= today.getTimezoneOffset();
+	document.getElementById('inputDate').valueAsDate = today;
 }
 
 /* Delete Table Row adapted from: http://jsfiddle.net/GRgMb/ */
