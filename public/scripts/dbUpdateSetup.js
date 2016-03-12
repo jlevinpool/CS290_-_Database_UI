@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', bindTestButton);
-document.addEventListener('DOMContentLoaded', setCurrentDate);
 
 function bindTestButton() {
 	document.getElementById('inputButton').addEventListener('click', function(event){
