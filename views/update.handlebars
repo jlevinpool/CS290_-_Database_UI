@@ -1,7 +1,8 @@
 <script src="scripts/dbUpdateSetup.js"></script>
-<form action="/">
+<form action="/" method="post">
 	<fieldset>
 		<legend>Update a workout: </legend>
+		<input type="hidden" id="type" value="Update"></input>
 		<input type="hidden" id="inputID" value="{{id}}"></input>
 		<label for="inputName">Exercise Name: </label>
 		<input type="text" id="inputName" value="{{name}}"></input></br>

@@ -47,6 +47,7 @@ app.get('/update',function(req,res,next){
 });
 
 app.post('/',function(req,res,next){
+	console.log(req.body);	
 	if(req.body['type']=='Delete') {
 		console.log("Delete Type Recieved");
 		mysql.pool.query('DELETE FROM workouts WHERE id=?',req.body['id'], function(err, results) {
@@ -73,6 +74,7 @@ app.post('/',function(req,res,next){
 	}
 	else if(req.body['type']=='Update') {
 		var context = {};
+		/*
 		mysql.pool.query('SELECT * FROM workouts WHERE id=?',req.body['id'],function (err, result) {
 			if (err) {
 				next(err);
@@ -93,7 +95,10 @@ app.post('/',function(req,res,next){
 					});
 			}
 		});
+		*/
+		console.log("Inside Update");
 	}
+	else if(req.body)
 	else {
 		console.log('Invalid POST Recieved - Unknown "Type"');
 		res.send(null);
