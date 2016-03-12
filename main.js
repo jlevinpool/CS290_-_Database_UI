@@ -47,7 +47,8 @@ app.get('/update',function(req,res,next){
 });
 
 app.post('/',function(req,res,next){
-	console.log(req);	
+	console.log(req.query);
+	console.log(req.body);	
 	if(req.body['type']=='Delete') {
 		console.log("Delete Type Recieved");
 		mysql.pool.query('DELETE FROM workouts WHERE id=?',req.body['id'], function(err, results) {
