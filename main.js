@@ -47,7 +47,6 @@ app.get('/update',function(req,res,next){
 });
 
 app.post('/',function(req,res,next){
-	console.log(req.query);
 	console.log(req.body);	
 	if(req.body['type']=='Delete') {
 		console.log("Delete Type Recieved");
