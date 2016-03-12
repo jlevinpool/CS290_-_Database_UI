@@ -91,16 +91,16 @@ app.post('/',function(req,res,next){
 							return;
 						}
 						console.log(result);
-						/*var context = {};
+						var context = {};
 						mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields) {
 						if(err) {
 							next(err);
 							return;
 						}
-					context.rows = rows;
-					context.results = JSON.stringify(rows);
-					res.render('home', context);
-					}); */
+						context.rows = rows;
+						context.results = JSON.stringify(rows);
+						res.render('home', context);
+					});
 				});
 			}
 		});
