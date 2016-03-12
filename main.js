@@ -34,6 +34,7 @@ app.get('/update',function(req,res,next){
 			return;
 		}
 		context = rows[0];
+		/* Fix the stupid date formatting */
 		context.dateYear = context.date.getFullYear();
 		context.dateMonth = context.date.getMonth() + 1;
 		if (context.dateMonth < 10) {
@@ -41,7 +42,6 @@ app.get('/update',function(req,res,next){
 		}
 		context.dateDate = context.date.getDate();
 		context.dateFormat = context.dateYear + "-" + context.dateMonth + "-" + context.dateDate;
-		console.log(context);
 		res.render('update',context);
 	});
 });
