@@ -36,6 +36,9 @@ app.get('/update',function(req,res,next){
 		context = rows[0];
 		context.dateYear = context.date.getFullYear();
 		context.dateMonth = context.date.getMonth() + 1;
+		if (context.dateMonth < 10) {
+			context.dateMonth = "0" + context.dateMonth;
+		}
 		context.dateDate = context.date.getDate();
 		context.dateFormat = context.dateYear + "-" + context.dateMonth + "-" + context.dateDate;
 		console.log(context);
