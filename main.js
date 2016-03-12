@@ -98,8 +98,8 @@ app.post('/',function(req,res,next){
 						}
 					context.rows = rows;
 					context.results = JSON.stringify(rows);
-					res.render('home', context); */
-					});
+					res.render('home', context);
+					}); */
 				});
 			}
 		});
