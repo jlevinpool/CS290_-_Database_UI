@@ -4,7 +4,7 @@ function bindTestButton() {
 	document.getElementById('inputButton').addEventListener('click', function(event){
 		/* Check if all fields are filled */
 		var status = {};
-		event.preventDefault();
+		//event.preventDefault();
 		if (document.getElementById('inputName').value == "") {
 			alert("Enter an exercise name");
 		}

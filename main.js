@@ -73,8 +73,6 @@ app.post('/',function(req,res,next){
 	}
 	else if(req.body['type']=='Update') {
 		var context = {};
-		console.log(req.body);
-		/*
 		mysql.pool.query('SELECT * FROM workouts WHERE id=?',req.body['id'],function (err, result) {
 			if (err) {
 				next(err);
@@ -83,9 +81,16 @@ app.post('/',function(req,res,next){
 			if (result.length == 1) {
 				var curVals = result[0];
 				mysql.pool.query('UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=?'),
-					[req.query.inputName || curVals.name, req.query.inputReps || curVals.reps, 
-					req.query.inputWeight || curVals.weight, req.query.inputDate || curVals.date,
-					//Select Option?]
+					[req.body['name'] || curVals.name, req.body['reps'] || curVals.reps, 
+					req.body['weight'] || curVals.weight, req.body['date'] || curVals.date,
+					req.body['weightUnit'] || curVals.lbs], function(err, result) {
+						if (err) {
+							next (err);
+							return;
+						}
+						res.type("text/plain");
+						res.send(results);
+					}
 			}
 		}
 		*/
