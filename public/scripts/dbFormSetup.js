@@ -49,17 +49,17 @@ function bindTestButton() {
 						}
 						/* Add Update button */
 						var newCell = newRow.insertCell(newContent.length);
-						var newBtn = document.createElement("BUTTON");
-						newBtn.innerHTML = 'Update';
+						var newBtn = document.createElement('input');
+						newBtn.type = 'button';
+						newBtn.value = 'Update';
 						newCell.appendChild(newBtn);
 						newRow.appendChild(newCell);
 						/* Add Delete button */
-						newCell = newRow.insertCell(newContent.length);
-						updateBtn = document.createElement("BUTTON");
-						newBtn.innerHTML = 'Delete';
-						newBtn.onclick = function () {
-							deleteRow('dataTable',newRow,response.insertId);
-						};
+						newCell = newRow.insertCell(newContent.length + 1);
+						newBtn = document.createElement('input');
+						newBtn.type = 'button';
+						newBtn.value = 'Delete';
+						newBtn.onclick = deleteRow('dataTable',newRow,response.insertId);
 						newCell.appendChild(newBtn);
 						newRow.appendChild(newCell);
 						/* Add row to table */
