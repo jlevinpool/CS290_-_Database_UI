@@ -47,7 +47,6 @@ app.get('/update',function(req,res,next){
 });
 
 app.post('/',function(req,res,next){
-	console.log(req.body);	
 	if(req.body['type']=='Delete') {
 		console.log("Delete Type Recieved");
 		mysql.pool.query('DELETE FROM workouts WHERE id=?',req.body['id'], function(err, results) {
@@ -74,8 +73,7 @@ app.post('/',function(req,res,next){
 	}
 	else if(req.body['type']=='Update') {
 		var context = {};
-		/*
-		mysql.pool.query('SELECT * FROM workouts WHERE id=?',req.body['id'],function (err, result) {
+		mysql.pool.query('SELECT * FROM workouts WHERE id=?',req.body['inputID'],function (err, result) {
 			if (err) {
 				next(err);
 				return;
@@ -83,20 +81,26 @@ app.post('/',function(req,res,next){
 			if (result.length == 1) {
 				var curVals = result[0];
 				mysql.pool.query('UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=?'),
-					[req.body['name'] || curVals.name, req.body['reps'] || curVals.reps, 
-					req.body['weight'] || curVals.weight, req.body['date'] || curVals.date,
-					req.body['weightUnit'] || curVals.lbs], function(err, result) {
+					[req.body['inputName'] || curVals.name, req.body['inputReps'] || curVals.reps, 
+					req.body['inputWeight'] || curVals.weight, req.body['inputDate'] || curVals.date,
+					req.body['inputWeightType'] || curVals.lbs], function(err, result) {
 						if (err) {
 							next (err);
 							return;
 						}
-						res.type("text/plain");
-						res.send(results);
+						var context = {};
+						mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields) {
+					if(err) {
+						next(err);
+						return;
+					}
+					context.rows = rows;
+					context.results = JSON.stringify(rows);
+					res.render('home', context);
 					});
+				});
 			}
 		});
-		*/
-		console.log("Inside Update");
 	}
 	else {
 		console.log('Invalid POST Recieved - Unknown "Type"');
