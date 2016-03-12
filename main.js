@@ -98,7 +98,6 @@ app.post('/',function(req,res,next){
 		*/
 		console.log("Inside Update");
 	}
-	else if(req.body)
 	else {
 		console.log('Invalid POST Recieved - Unknown "Type"');
 		res.send(null);
