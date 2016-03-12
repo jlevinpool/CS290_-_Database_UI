@@ -81,10 +81,11 @@ app.post('/',function(req,res,next){
 			if (result.length == 1) {
 				var curVals = result[0];
 				console.log(curVals);
+				console.log(req.body);
 				mysql.pool.query('UPDATE workouts SET name=?, reps=?, weight=?, date=?, lbs=? WHERE id=?',
 					[req.body['inputName'] || curVals.name, req.body['inputReps'] || curVals.reps, 
 					req.body['inputWeight'] || curVals.weight, req.body['inputDate'] || curVals.date,
-					req.body['inputWeightType'] || curVals.lbs], function(err, result) {
+					req.body['inputWeightType'] || curVals.lbs, req.body['inputID']], function(err, result) {
 						if (err) {
 							next (err);
 							return;
