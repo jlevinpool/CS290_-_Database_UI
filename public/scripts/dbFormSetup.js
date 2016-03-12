@@ -33,11 +33,22 @@ function bindTestButton() {
 						/* Insert adapted from: http://stackoverflow.com/questions/18333427/how-to-insert-row-in-html-table-body-in-javascript */
 						var table = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
 						var newRow = table.insertRow(table.rows.length);
-						/* Insert ID */
-						var newCell = newRow.insertCell(0);
-						var newText = document.createTextNode(response.insertId);
-						newCell.appendChild(newText);
-						newRow.appendChild(newCell);
+						/* Get cell contents */
+						var newContent = [];
+						newContent[0] = response.insertId;
+						newContent[1] = document.getElementById('inputName').value;
+						newContent[2] = document.getElementById('inputReps').value;
+						newContent[3] = document.getElementById('inputWeight').value + " " + selectWeightType.options[selectWeightType.selectedIndex].text;
+						newContent[4] = document.getElementById('inputDate').value;
+						/* Add cells to table */
+						for (i = 0; i < newContent.length; i++) {
+							var newCell = newRow.insertCell(i);
+							var newText = document.createTextNode(newContent[i]);
+							newCell.appendChild(newText);
+							newRow.appendChild(newCell);
+						}
+						
+						/* Add row to table */
 						table.appendChild(newRow);
 						
 					}
