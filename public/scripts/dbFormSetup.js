@@ -48,10 +48,7 @@ function bindTestButton() {
 						}
 						/* Add Update button */
 						var upCell = newRow.insertCell(newContent.length);
-						var upBtn = document.createElement('input');
-						upBtn.type = 'button';  //NEED TO FIX
-						upBtn.value = 'Update';
-						upCell.appendChild(upBtn);
+						upCell.innerHTML = '<form method="GET" action="/update">\n<input type="hidden" name="id" value="' + response.insertId + '></input>\n<input type="submit" value="Update"></input>\n</form>'
 						newRow.appendChild(upCell);
 						/* Add Delete button */
 						var delCell = newRow.insertCell(newContent.length + 1);
