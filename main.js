@@ -35,7 +35,7 @@ app.get('/update',function(req,res,next){
 		}
 		context.rows = rows;
 		context.results = JSON.stringify(rows);
-		console.log(context.results);
+		console.log(context);
 		res.render('update',context);
 	});
 });
