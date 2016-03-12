@@ -93,7 +93,6 @@ app.post('/',function(req,res,next){
 					}
 			}
 		}
-		*/
 	}
 	else {
 		console.log('Invalid POST Recieved - Unknown "Type"');
